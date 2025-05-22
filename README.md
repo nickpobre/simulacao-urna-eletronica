@@ -75,7 +75,7 @@ CREATE TABLE candidatos (
 ### Inserir candidatos
 
 ```sql
-NSERT INTO candidatos (numero, nome, partido) VALUES
+INSERT INTO candidatos (numero, nome, partido) VALUES
 ('10', 'João Silva', 'Partido A'),
 ('20', 'Maria Souza', 'Partido B'),
 ('30', 'Carlos Lima', 'Partido C');
