@@ -57,27 +57,28 @@ CREATE DATABASE urna;
 
 USE urna;
 
-CREATE TABLE candidatos (
+CREATE TABLE votos (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    numero VARCHAR(2) NOT NULL UNIQUE,
+    tipo ENUM('nominal', 'blank', 'null') NOT NULL,
+    candidato VARCHAR(10) NULL,
+    data_voto TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE candidatos (
+    numero VARCHAR(10) PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     partido VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE votos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    tipo ENUM('nominal', 'blank', 'null') NOT NULL,
-    numero_candidato VARCHAR(2),
-    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
 ````
 
 ### Inserir candidatos
 
 ```sql
-INSERT INTO candidatos (numero, nome, partido) VALUES 
-('12', 'João Silva', 'Partido A'),
-('34', 'Maria Souza', 'Partido B');
+NSERT INTO candidatos (numero, nome, partido) VALUES
+('10', 'João Silva', 'Partido A'),
+('20', 'Maria Souza', 'Partido B'),
+('30', 'Carlos Lima', 'Partido C');
 ```
 
 ---
