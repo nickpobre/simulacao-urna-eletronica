@@ -36,8 +36,7 @@ Foi utilizado para separar a lógica de cada tipo de voto (nominal, branco, nulo
 │   BlankVote.php
 │   NullVote.php
 │   VotingContext.php
-/database
-│   connection.php
+db.php
 index.php
 vote.php
 get\_candidato.php
